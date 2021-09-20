@@ -1,0 +1,7 @@
+body .ui-panel .ui-panel-titlebar {
+  cursor: grab !important;
+}
+
+body .ui-panel .ui-panel-titlebar:hover {
+    cursor: grab !important;
+  }

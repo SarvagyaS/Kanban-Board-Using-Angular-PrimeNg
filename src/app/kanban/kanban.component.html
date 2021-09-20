@@ -1,0 +1,23 @@
+<h3>Kanban Board</h3>
+
+<div class="p-grid">
+  <div class="p-col" *ngFor="let col of boardData; let colIndex = index;" class="ui-helper-clearfix ui-g-3"
+    pDroppable="task" (onDrop)="onTaskDrop($event, colIndex)">
+    <h4>{{col.heading}}</h4>
+    <div pDraggable="task" dragHandle=".ui-panel-titlebar" *ngFor="let task of col.tasks"
+      (onDragStart)="onTaskDragStart($event,task, colIndex)">
+      <p-panel>
+        {{task.value}}
+      </p-panel>
+      <br />
+    </div>
+  </div>
+</div>
+
+<p style="float: right;" (click)="initializeBoardData()">
+  Reset board
+</p>
+
+<p style="color: #ff0d0d;">
+  <i class="pi pi-info-circle"></i> Drag the headers
+</p>
